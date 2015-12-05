@@ -2,9 +2,24 @@
 
 import time
 
+from PIL import Image
+import array
+
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
 c_real, c_imag = -0.62772, -0.42193
 
+def show_image(output_raw, width, height, max_iterations):
+    max_iterations = float(max(output_raw))
+    print max_iterations
+    scale_factor = float(max_iterations)
+
+    # scaleを0〜255の256階調に量子化
+    scaled = [int(o/scale_factor*255) for o in output_raw]
+    output = array.array('B', scaled)
+
+    im = Image.new("L", (width, height))
+    im.frombytes(output.tostring(), "raw", "L", 0, -1)
+    im.show()
 
 def calculate_z_serial_purepython(maxiter, zs, cs):
     '''
@@ -63,6 +78,8 @@ def calc_pure_python(desired_width, max_iterations):
     print calculate_z_serial_purepython.func_name + " took", duration, "sec"
 
     assert sum(output) == 33219980
+    
+    show_image(output, len(x), len(y), max_iterations)
 
 
 def test():
