@@ -5,6 +5,8 @@ import time
 from PIL import Image
 import array
 
+from decorate import timefn
+
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
 c_real, c_imag = -0.62772, -0.42193
 
@@ -21,6 +23,7 @@ def show_image(output_raw, width, height, max_iterations):
     im.frombytes(output.tostring(), "raw", "L", 0, -1)
     im.show()
 
+@timefn
 def calculate_z_serial_purepython(maxiter, zs, cs):
     '''
     ジュリア漸化式を用いた計算
