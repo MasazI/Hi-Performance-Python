@@ -42,9 +42,8 @@ def calculate_z_serial_purepython(maxiter, zs, cs):
 
 
 # heapyによるヒープ上のオブジェクト観察
-# draw_outputを引数に追加
 # hpyがヒープオブジェクトである
-def calc_pure_python(draw_output, desired_width, max_iterations):
+def calc_pure_python(desired_width, max_iterations):
     '''
     座標リストzsとパラメータリストcsを生成し、ジュリア集合を生成する
     '''
