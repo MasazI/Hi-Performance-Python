@@ -25,6 +25,9 @@ Pythonは記述力が大変高い言語です。実行するまでに必要な�
 - julia_guppy.py  
 heapyを使ってヒープ上のオブジェクトを計測した例  
 
+- julia_guppy_rel.py  
+heapyを使ってヒープ上のオブジェクトを計測した例(チェックポイントからの差分を計測)
+
 - julia_memory_label.py  
 memory_profilerを使ってラベルをつけてメモリ使用量を計測するコード
 
