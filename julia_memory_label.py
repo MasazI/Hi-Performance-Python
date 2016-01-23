@@ -23,9 +23,11 @@ def show_image(output_raw, width, height, max_iterations):
     im.frombytes(output.tostring(), "raw", "L", 0, -1)
     im.show()
 
+# profileによってメモリを測定する関数を指定
 @timefn
 @profile
 def calculate_z_serial_purepython(maxiter, zs, cs):
+    # 1つ目のラベル
     with profile.timestamp("create_output_list"):
         '''
         ジュリア漸化式を用いた計算
@@ -33,6 +35,7 @@ def calculate_z_serial_purepython(maxiter, zs, cs):
         output = [0] * len(zs)
 
     time.sleep(1)
+    # 2つ目のラベル
     with profile.timestamp("create_range_of_zs"):
         iterations = range(len(zs))
         for i in iterations:
