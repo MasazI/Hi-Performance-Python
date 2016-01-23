@@ -3,14 +3,18 @@ Pythonを使ってコンピュータサイエンスについて理解を深め�
 
 ## 各ファイルの説明
 
-- decorate.py
+- decorate.py  
 処理時間を計測するためのデコレータ
 
-- julia.py
+- julia.py  
 ジュリア集合を計算し可視化するコード  
-このファイルを基本として、パフォーマンスを計測する各種方法を記述する
+このファイルを基本として、パフォーマンスを計測する各種方法を記述します
 
-- julia_guppy.py
-ジュリア集合の計算について、heapyを使ってヒープ上のオブジェクトを計測した例
+- julia_guppy.py  
+heapyを使ってヒープ上のオブジェクトを計測した例  
 
-- julia
+- julia_memory_label.py  
+memory_profilerを使ってラベルをつけてメモリ使用量を計測するコード
+
+- julia_profile_memory_cpu.py  
+cpu_profiler、memory_profilerを使ってcpuとメモリについて計測するコード
