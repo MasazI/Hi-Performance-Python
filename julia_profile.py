@@ -24,6 +24,7 @@ def show_image(output_raw, width, height, max_iterations):
     im.show()
 
 @timefn
+@profile
 def calculate_z_serial_purepython(maxiter, zs, cs):
     '''
     ジュリア漸化式を用いた計算

@@ -41,7 +41,10 @@ def calculate_z_serial_purepython(maxiter, zs, cs):
     return output
 
 
-def calc_pure_python(desired_width, max_iterations):
+# heapyによるヒープ上のオブジェクト観察
+# draw_outputを引数に追加
+# hpyがヒープオブジェクトである
+def calc_pure_python(draw_output, desired_width, max_iterations):
     '''
     座標リストzsとパラメータリストcsを生成し、ジュリア集合を生成する
     '''
@@ -61,6 +64,14 @@ def calc_pure_python(desired_width, max_iterations):
         x.append(xcoord)
         xcoord += x_step
 
+    # 1回目の計測
+    from guppy import hpy; hp = hpy()
+    # float型の座標xとyを生成した後の情報を表示
+    print "heapy after creating y and x lists of floats"
+    h = hp.heap()
+    print h 
+    print
+
     zs = []
     cs = []
 
@@ -68,6 +79,14 @@ def calc_pure_python(desired_width, max_iterations):
         for xcoord in x:
             zs.append(complex(xcoord, ycoord))
             cs.append(complex(c_real, c_imag))
+
+    # 2回目の計測
+    print "heapy after creating zs and cs using complex numbers"
+    # 複素数のzとcsを生成した後の情報を表示
+    h = hp.heap()
+    print h
+    print
+
 
     print "Length of x: ", len(x)
     print "Total elements: ", len(zs)
@@ -77,6 +96,14 @@ def calc_pure_python(desired_width, max_iterations):
     end_time = time.time()
 
     duration = end_time - start_time
+
+
+    # 3回目の計測
+    print "heapy after calling calculate_z_serial_purepython"
+    # calculate_z_serial_purepython 後の情報を表示
+    h = hp.heap()
+    print h
+    print
 
     print calculate_z_serial_purepython.func_name + " took", duration, "sec"
 
