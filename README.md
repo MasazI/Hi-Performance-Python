@@ -18,3 +18,10 @@ memory_profilerを使ってラベルをつけてメモリ使用量を計測す�
 
 - julia_profile_memory_cpu.py  
 cpu_profiler、memory_profilerを使ってcpuとメモリについて計測するコード
+
+- prime.py  
+素数かどうかチェックするコード  
+コードのどの部分をベクタライズできると嬉しいでしょうか？
+
+- search.py 
+簡単な工夫で計算を高速化する例を示すコードです
