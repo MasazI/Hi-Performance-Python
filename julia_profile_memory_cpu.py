@@ -23,6 +23,8 @@ def show_image(output_raw, width, height, max_iterations):
     im.frombytes(output.tostring(), "raw", "L", 0, -1)
     im.show()
 
+
+# cpuのprofileとmemoryのprofile用のprofileアノテーション
 @timefn
 @profile
 def calculate_z_serial_purepython(maxiter, zs, cs):
