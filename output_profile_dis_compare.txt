@@ -1,0 +1,30 @@
+同じ計算結果になる: True
+  4           0 LOAD_CONST               1 (0)
+              3 STORE_FAST               1 (total)
+
+  5           6 SETUP_LOOP              30 (to 39)
+              9 LOAD_GLOBAL              0 (xrange)
+             12 LOAD_FAST                0 (upper)
+             15 CALL_FUNCTION            1
+             18 GET_ITER            
+        >>   19 FOR_ITER                16 (to 38)
+             22 STORE_FAST               2 (n)
+
+  6          25 LOAD_FAST                1 (total)
+             28 LOAD_FAST                2 (n)
+             31 INPLACE_ADD         
+             32 STORE_FAST               1 (total)
+             35 JUMP_ABSOLUTE           19
+        >>   38 POP_BLOCK           
+
+  7     >>   39 LOAD_FAST                1 (total)
+             42 RETURN_VALUE        
+None
+----
+ 11           0 LOAD_GLOBAL              0 (sum)
+              3 LOAD_GLOBAL              1 (xrange)
+              6 LOAD_FAST                0 (upper)
+              9 CALL_FUNCTION            1
+             12 CALL_FUNCTION            1
+             15 RETURN_VALUE        
+None
