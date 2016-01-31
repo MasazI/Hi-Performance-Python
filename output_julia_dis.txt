@@ -1,0 +1,66 @@
+ 30           0 LOAD_CONST               1 (0)
+              3 BUILD_LIST               1
+              6 LOAD_GLOBAL              0 (len)
+              9 LOAD_FAST                1 (zs)
+             12 CALL_FUNCTION            1
+             15 BINARY_MULTIPLY     
+             16 STORE_FAST               3 (output)
+
+ 31          19 SETUP_LOOP             123 (to 145)
+             22 LOAD_GLOBAL              1 (range)
+             25 LOAD_GLOBAL              0 (len)
+             28 LOAD_FAST                1 (zs)
+             31 CALL_FUNCTION            1
+             34 CALL_FUNCTION            1
+             37 GET_ITER            
+        >>   38 FOR_ITER               103 (to 144)
+             41 STORE_FAST               4 (i)
+
+ 32          44 LOAD_CONST               1 (0)
+             47 STORE_FAST               5 (n)
+
+ 33          50 LOAD_FAST                1 (zs)
+             53 LOAD_FAST                4 (i)
+             56 BINARY_SUBSCR       
+             57 STORE_FAST               6 (z)
+
+ 34          60 LOAD_FAST                2 (cs)
+             63 LOAD_FAST                4 (i)
+             66 BINARY_SUBSCR       
+             67 STORE_FAST               7 (c)
+
+ 36          70 SETUP_LOOP              58 (to 131)
+        >>   73 LOAD_GLOBAL              2 (abs)
+             76 LOAD_FAST                6 (z)
+             79 CALL_FUNCTION            1
+             82 LOAD_CONST               2 (2)
+             85 COMPARE_OP               0 (<)
+             88 POP_JUMP_IF_FALSE      130
+             91 LOAD_FAST                5 (n)
+             94 LOAD_FAST                0 (maxiter)
+             97 COMPARE_OP               0 (<)
+            100 POP_JUMP_IF_FALSE      130
+
+ 37         103 LOAD_FAST                6 (z)
+            106 LOAD_FAST                6 (z)
+            109 BINARY_MULTIPLY     
+            110 LOAD_FAST                7 (c)
+            113 BINARY_ADD          
+            114 STORE_FAST               6 (z)
+
+ 38         117 LOAD_FAST                5 (n)
+            120 LOAD_CONST               3 (1)
+            123 INPLACE_ADD         
+            124 STORE_FAST               5 (n)
+            127 JUMP_ABSOLUTE           73
+        >>  130 POP_BLOCK           
+
+ 39     >>  131 LOAD_FAST                5 (n)
+            134 LOAD_FAST                3 (output)
+            137 LOAD_FAST                4 (i)
+            140 STORE_SUBSCR        
+            141 JUMP_ABSOLUTE           38
+        >>  144 POP_BLOCK           
+
+ 40     >>  145 LOAD_FAST                3 (output)
+            148 RETURN_VALUE        
