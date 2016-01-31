@@ -37,6 +37,9 @@ memory_profilerを使ってラベルをつけてメモリ使用量を計測す�
 - julia_profile_memory_cpu.py  
 cpu_profiler、memory_profilerを使ってcpuとメモリについて計測するコード
 
+- julia_timefn.py  
+デコレータを使って関数の処理時間を計測する例
+
 - prime.py  
 素数かどうかチェックするコード  
 コードのどの部分をベクタライズできると嬉しいでしょうか？
