@@ -11,3 +11,5 @@ def fn_terse(upper = 1000000):
     return sum(xrange(upper))
 
 print("同じ計算結果になる: %s" % (fn_expressive() == fn_terse()))
+
+
