@@ -40,6 +40,9 @@ cpu_profiler、memory_profilerを使ってcpuとメモリについて計測す�
 - julia_timefn.py  
 デコレータを使って関数の処理時間を計測する例
 
+- list_tuple.py  
+リストとタプルのコード
+
 - prime.py  
 素数かどうかチェックするコード  
 コードのどの部分をベクタライズできると嬉しいでしょうか？
